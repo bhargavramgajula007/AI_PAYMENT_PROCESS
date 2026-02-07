@@ -108,6 +108,20 @@ Execute trades, view AI analysis, and track trader evolution.
 
 ---
 
+## ⚠️ Performance Note & Limitations
+
+Please note that this is a **Demonstration Prototype**. The backend is intentionally simplified for portability:
+- **Single-Threaded**: The Node.js server handles Simulation, AI Analysis, and WebSocket broadcasts in a single process. Heavy load (100+ concurrent simulated users) may cause latency.
+- **JSON Persistence**: Trade history is stored in local JSON files instead of a high-performance database (like PostgreSQL/Redis). This limits write speeds.
+- **Cold Starts**: Services deployed on free-tier platforms (Railway/Render) may spin down after inactivity, causing a 30-60s delay on first request.
+
+**Future Scaling Plan:**
+- Migrate to **Microservices** (separate Order Matching Engine vs. Fraud Service).
+- Replace `trades.json` with **PostgreSQL + TimescaleDB**.
+- Implement **Redis Caching** for real-time market data.
+
+---
+
 ### 📦 Installation (Local)
 
 ```bash

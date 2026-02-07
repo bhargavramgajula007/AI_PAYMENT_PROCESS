@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "server": "node server/index.js",
     "start": "concurrently \"npm run dev\" \"npm run server\"",
-    "start:prod": "node server/index.js"
+    "start:prod": "node server/index.js",
+    "railway:build": "npm run build"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

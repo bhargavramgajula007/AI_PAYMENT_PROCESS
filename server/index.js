@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { clientSimulator } from './data/clientSimulator.js';
 import { riskEngine } from './data/riskEngine.js';
 import { graphService } from './services/graphService.js';
@@ -944,6 +946,18 @@ clientSimulator.on('payout_request', async (request) => {
 
     console.log(`[AutoPayout] ${request.trader_id} -> ${status} | Risk: ${(riskAssessment.score * 100).toFixed(0)}% | Pattern: ${riskAssessment.embedding_matches?.[0]?.pattern_name || 'None'}`);
 });
+
+// Serve static files in production
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../dist')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../dist/index.html'));
+    });
+}
 
 // Start server
 app.listen(PORT, () => {

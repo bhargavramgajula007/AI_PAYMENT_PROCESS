@@ -1,0 +1,754 @@
+{
+  "types": {
+    "PAYMENT": {
+      "count": 164032,
+      "totalAmount": 1906850505.1699977,
+      "min": 0.1,
+      "max": 92057.11,
+      "fraudCount": 0,
+      "mean": 11624.868959532272,
+      "fraudRate": 0
+    },
+    "TRANSFER": {
+      "count": 40730,
+      "totalAmount": 28080964321.129887,
+      "min": 46.22,
+      "max": 10000000,
+      "fraudCount": 112,
+      "mean": 689441.795264667,
+      "fraudRate": 0.002749815860545053
+    },
+    "CASH_OUT": {
+      "count": 182316,
+      "totalAmount": 34183065776.629833,
+      "min": 0.37,
+      "max": 10000000,
+      "fraudCount": 121,
+      "mean": 187493.50455598978,
+      "fraudRate": 0.0006636828363939533
+    },
+    "DEBIT": {
+      "count": 3603,
+      "totalAmount": 23443318.93999993,
+      "min": 3.81,
+      "max": 150053.28,
+      "fraudCount": 0,
+      "mean": 6506.6108631695615,
+      "fraudRate": 0
+    },
+    "CASH_IN": {
+      "count": 109319,
+      "totalAmount": 19002520079.070374,
+      "min": 5.66,
+      "max": 1289407.91,
+      "fraudCount": 0,
+      "mean": 173826.32551587897,
+      "fraudRate": 0
+    }
+  },
+  "fraudPatterns": [
+    {
+      "type": "TRANSFER",
+      "amount": 181,
+      "nameOrig": "C1305486145",
+      "nameDest": "C553264065",
+      "oldbalanceOrg": 181,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 181,
+      "nameOrig": "C840083671",
+      "nameDest": "C38997010",
+      "oldbalanceOrg": 181,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 2806,
+      "nameOrig": "C1420196421",
+      "nameDest": "C972765878",
+      "oldbalanceOrg": 2806,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 2806,
+      "nameOrig": "C2101527076",
+      "nameDest": "C1007251739",
+      "oldbalanceOrg": 2806,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 20128,
+      "nameOrig": "C137533655",
+      "nameDest": "C1848415041",
+      "oldbalanceOrg": 20128,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 20128,
+      "nameOrig": "C1118430673",
+      "nameDest": "C339924917",
+      "oldbalanceOrg": 20128,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 416001.33,
+      "nameOrig": "C749981943",
+      "nameDest": "C667346055",
+      "oldbalanceOrg": 0,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 1277212.77,
+      "nameOrig": "C1334405552",
+      "nameDest": "C431687661",
+      "oldbalanceOrg": 1277212.77,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 1277212.77,
+      "nameOrig": "C467632528",
+      "nameDest": "C716083600",
+      "oldbalanceOrg": 1277212.77,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 35063.63,
+      "nameOrig": "C1364127192",
+      "nameDest": "C1136419747",
+      "oldbalanceOrg": 35063.63,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 35063.63,
+      "nameOrig": "C1635772897",
+      "nameDest": "C1983025922",
+      "oldbalanceOrg": 35063.63,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 25071.46,
+      "nameOrig": "C669700766",
+      "nameDest": "C1384210339",
+      "oldbalanceOrg": 25071.46,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 25071.46,
+      "nameOrig": "C1275464847",
+      "nameDest": "C1364913072",
+      "oldbalanceOrg": 25071.46,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 132842.64,
+      "nameOrig": "C13692003",
+      "nameDest": "C297927961",
+      "oldbalanceOrg": 4499.08,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 235238.66,
+      "nameOrig": "C1872047468",
+      "nameDest": "C116289363",
+      "oldbalanceOrg": 235238.66,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 235238.66,
+      "nameOrig": "C1499825229",
+      "nameDest": "C2100440237",
+      "oldbalanceOrg": 235238.66,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 1096187.24,
+      "nameOrig": "C1093223281",
+      "nameDest": "C2063275841",
+      "oldbalanceOrg": 1096187.24,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 1096187.24,
+      "nameOrig": "C77163673",
+      "nameDest": "C644345897",
+      "oldbalanceOrg": 1096187.24,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 963532.14,
+      "nameOrig": "C1440057381",
+      "nameDest": "C268086000",
+      "oldbalanceOrg": 963532.14,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 963532.14,
+      "nameOrig": "C430329518",
+      "nameDest": "C991505714",
+      "oldbalanceOrg": 963532.14,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 14949.84,
+      "nameOrig": "C140702728",
+      "nameDest": "C634210724",
+      "oldbalanceOrg": 14949.84,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 14949.84,
+      "nameOrig": "C395257482",
+      "nameDest": "C1032986144",
+      "oldbalanceOrg": 14949.84,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 18627.02,
+      "nameOrig": "C1375503918",
+      "nameDest": "C234430897",
+      "oldbalanceOrg": 18627.02,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 18627.02,
+      "nameOrig": "C175961135",
+      "nameDest": "C1711105800",
+      "oldbalanceOrg": 18627.02,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 10539.37,
+      "nameOrig": "C1134864869",
+      "nameDest": "C118648358",
+      "oldbalanceOrg": 10539.37,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 10539.37,
+      "nameOrig": "C1984954272",
+      "nameDest": "C124540047",
+      "oldbalanceOrg": 10539.37,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 22877,
+      "nameOrig": "C1247938090",
+      "nameDest": "C1002031672",
+      "oldbalanceOrg": 22877,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 22877,
+      "nameOrig": "C2126545173",
+      "nameDest": "C573200870",
+      "oldbalanceOrg": 22877,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 10000000,
+      "nameOrig": "C7162498",
+      "nameDest": "C945327594",
+      "oldbalanceOrg": 12930418.44,
+      "newbalanceOrig": 2930418.44
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 10000000,
+      "nameOrig": "C351297720",
+      "nameDest": "C766681183",
+      "oldbalanceOrg": 10000000,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 2930418.44,
+      "nameOrig": "C2047521920",
+      "nameDest": "C449261773",
+      "oldbalanceOrg": 2930418.44,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 2930418.44,
+      "nameOrig": "C2044690596",
+      "nameDest": "C932583850",
+      "oldbalanceOrg": 2930418.44,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 169941.73,
+      "nameOrig": "C540962910",
+      "nameDest": "C2127862399",
+      "oldbalanceOrg": 169941.73,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 169941.73,
+      "nameOrig": "C2026325575",
+      "nameDest": "C1394526584",
+      "oldbalanceOrg": 169941.73,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 13707.11,
+      "nameOrig": "C17222024",
+      "nameDest": "C410033330",
+      "oldbalanceOrg": 13707.11,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 13707.11,
+      "nameOrig": "C556223230",
+      "nameDest": "C2094777811",
+      "oldbalanceOrg": 13707.11,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 86070.17,
+      "nameOrig": "C1844941220",
+      "nameDest": "C1191544932",
+      "oldbalanceOrg": 86070.17,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 86070.17,
+      "nameOrig": "C1699873763",
+      "nameDest": "C560041895",
+      "oldbalanceOrg": 86070.17,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 120074.73,
+      "nameOrig": "C1409933277",
+      "nameDest": "C162114152",
+      "oldbalanceOrg": 120074.73,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 120074.73,
+      "nameOrig": "C1174000532",
+      "nameDest": "C410033330",
+      "oldbalanceOrg": 120074.73,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 60726.57,
+      "nameOrig": "C383882703",
+      "nameDest": "C1807010830",
+      "oldbalanceOrg": 60726.57,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 60726.57,
+      "nameOrig": "C840095827",
+      "nameDest": "C803116137",
+      "oldbalanceOrg": 60726.57,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 10119.47,
+      "nameOrig": "C1775746074",
+      "nameDest": "C746009679",
+      "oldbalanceOrg": 10119.47,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 10119.47,
+      "nameOrig": "C213063852",
+      "nameDest": "C922511709",
+      "oldbalanceOrg": 10119.47,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 33332.86,
+      "nameOrig": "C2025652936",
+      "nameDest": "C1662235713",
+      "oldbalanceOrg": 33332.86,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 33332.86,
+      "nameOrig": "C685428529",
+      "nameDest": "C1626759869",
+      "oldbalanceOrg": 33332.86,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 25975.86,
+      "nameOrig": "C864622150",
+      "nameDest": "C41792607",
+      "oldbalanceOrg": 25975.86,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 25975.86,
+      "nameOrig": "C1004271827",
+      "nameDest": "C451934410",
+      "oldbalanceOrg": 25975.86,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 26768.5,
+      "nameOrig": "C457596841",
+      "nameDest": "C1956477953",
+      "oldbalanceOrg": 26768.5,
+      "newbalanceOrig": 0
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 26768.5,
+      "nameOrig": "C682812632",
+      "nameDest": "C256417920",
+      "oldbalanceOrg": 26768.5,
+      "newbalanceOrig": 0
+    }
+  ],
+  "legitPatterns": [
+    {
+      "type": "PAYMENT",
+      "amount": 4098.78,
+      "nameOrig": "C1026483832",
+      "nameDest": "M1635378213"
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 229133.94,
+      "nameOrig": "C905080434",
+      "nameDest": "C476402209"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 9014.95,
+      "nameOrig": "C1027319653",
+      "nameDest": "M633079302"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 628719.07,
+      "nameOrig": "C2022689531",
+      "nameDest": "C1359044626"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 403418.39,
+      "nameOrig": "C848097505",
+      "nameDest": "C1286084959"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 4111.34,
+      "nameOrig": "C500885941",
+      "nameDest": "M1115381650"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 4804.68,
+      "nameOrig": "C879311295",
+      "nameDest": "M1274247563"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 21008.52,
+      "nameOrig": "C970781872",
+      "nameDest": "M1850597787"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 6495.27,
+      "nameOrig": "C908722588",
+      "nameDest": "M496757837"
+    },
+    {
+      "type": "DEBIT",
+      "amount": 3390.74,
+      "nameOrig": "C95322593",
+      "nameDest": "C1336996537"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 3903.48,
+      "nameOrig": "C762509150",
+      "nameDest": "M145455292"
+    },
+    {
+      "type": "DEBIT",
+      "amount": 2676.97,
+      "nameOrig": "C936906727",
+      "nameDest": "C824208363"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 298109.36,
+      "nameOrig": "C712732521",
+      "nameDest": "C667346055"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 8176.58,
+      "nameOrig": "C936628786",
+      "nameDest": "M817941759"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 1020.89,
+      "nameOrig": "C539240764",
+      "nameDest": "M1883830050"
+    },
+    {
+      "type": "DEBIT",
+      "amount": 4993.81,
+      "nameOrig": "C1088744071",
+      "nameDest": "C488044861"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 5462.01,
+      "nameOrig": "C1552179791",
+      "nameDest": "M1661161169"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 72311.62,
+      "nameOrig": "C1625901537",
+      "nameDest": "C575335780"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 11436.9,
+      "nameOrig": "C526720216",
+      "nameDest": "C2100440237"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 8525.08,
+      "nameOrig": "C2029645118",
+      "nameDest": "M274298188"
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 29572.74,
+      "nameOrig": "C62739928",
+      "nameDest": "C1262822392"
+    },
+    {
+      "type": "DEBIT",
+      "amount": 4444.35,
+      "nameOrig": "C1184694332",
+      "nameDest": "C611572016"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 6.42,
+      "nameOrig": "C1921012072",
+      "nameDest": "M884604029"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 56869.53,
+      "nameOrig": "C1753259207",
+      "nameDest": "C1568059495"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 3154.47,
+      "nameOrig": "C783785150",
+      "nameDest": "M749098095"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 10808.31,
+      "nameOrig": "C2044272973",
+      "nameDest": "M1029148906"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 230892.79,
+      "nameOrig": "C973604748",
+      "nameDest": "C909295153"
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 247199.96,
+      "nameOrig": "C347136295",
+      "nameDest": "C195600860"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 292.45,
+      "nameOrig": "C1998103567",
+      "nameDest": "M824915171"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 2280.09,
+      "nameOrig": "C1698746141",
+      "nameDest": "M248050873"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 71045.05,
+      "nameOrig": "C1778257620",
+      "nameDest": "C1629687658"
+    },
+    {
+      "type": "TRANSFER",
+      "amount": 376507.72,
+      "nameOrig": "C873002645",
+      "nameDest": "C909295153"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 9583.89,
+      "nameOrig": "C1597280379",
+      "nameDest": "M726483751"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 327117.43,
+      "nameOrig": "C857732012",
+      "nameDest": "C1504109395"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 5466.9,
+      "nameOrig": "C1492980244",
+      "nameDest": "M2106390956"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 2034.58,
+      "nameOrig": "C1663271865",
+      "nameDest": "M1256384385"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 9030.55,
+      "nameOrig": "C929066990",
+      "nameDest": "M869437194"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 336.88,
+      "nameOrig": "C321795476",
+      "nameDest": "M1327714567"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 63936.91,
+      "nameOrig": "C2100817420",
+      "nameDest": "C490150701"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 23717.57,
+      "nameOrig": "C2000267972",
+      "nameDest": "C317071334"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 51208.37,
+      "nameOrig": "C1603213074",
+      "nameDest": "C317071334"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 3455.87,
+      "nameOrig": "C2053425932",
+      "nameDest": "M2019482012"
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 228399.52,
+      "nameOrig": "C177279387",
+      "nameDest": "C662736689"
+    },
+    {
+      "type": "CASH_OUT",
+      "amount": 19548.49,
+      "nameOrig": "C622955085",
+      "nameDest": "C1255024717"
+    },
+    {
+      "type": "CASH_IN",
+      "amount": 185680.98,
+      "nameOrig": "C1186328673",
+      "nameDest": "C985934102"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 1627.82,
+      "nameOrig": "C215351125",
+      "nameDest": "M1610818058"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 4532.37,
+      "nameOrig": "C654821264",
+      "nameDest": "M2112036973"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 7654.41,
+      "nameOrig": "C1051304081",
+      "nameDest": "M385131456"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 8069.14,
+      "nameOrig": "C1564494396",
+      "nameDest": "M184147252"
+    },
+    {
+      "type": "PAYMENT",
+      "amount": 7235.23,
+      "nameOrig": "C265722243",
+      "nameDest": "M574790161"
+    }
+  ],
+  "accountBehavior": {}
+}

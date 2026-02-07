@@ -18,13 +18,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Health check - PRIORITIZED
+app.get('/api/health', (req, res) => res.json({ status: 'ok', time: Date.now() }));
+app.get('/', (req, res) => res.send('AI Payment Process API is Remote & Running 🚀'));
+
 app.use(cors());
 app.use(express.json());
-
-// Health check for Railway
-app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
 
 // Persistent trade storage + in-memory caches
 let trades = []; // Reference to tradeHistory.trades
@@ -975,8 +974,12 @@ const server = app.listen(PORT, '0.0.0.0', () => {
             // Initialize trade history
             initializeTradeHistory();
 
-            // Start simulation
-            clientSimulator.start();
+            // Start simulation (DEV ONLY)
+            if (process.env.NODE_ENV !== 'production') {
+                clientSimulator.start();
+            } else {
+                console.log('[Engine] Simulation skipped in Production');
+            }
 
             console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
             console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);

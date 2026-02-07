@@ -960,22 +960,29 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start server
-app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`\n╔════════════════════════════════════════════════════════╗`);
     console.log(`║     ENTERPRISE FRAUD DETECTION ENGINE v2.0             ║`);
     console.log(`║     ML-Powered with Embeddings & Pattern Matching      ║`);
     console.log(`╠════════════════════════════════════════════════════════╣`);
-    console.log(`║  Port: ${PORT}                                            ║`);
+    console.log(`║  Port: ${PORT} (Bound to 0.0.0.0)                         ║`);
     console.log(`║  GenAI: ${process.env.GEMINI_API_KEY ? 'ENABLED ✓' : 'DISABLED (fallback mode)'}                       ║`);
     console.log(`╚════════════════════════════════════════════════════════╝\n`);
 
-    // Initialize trade history
-    initializeTradeHistory();
+    // Initialize asynchronously to allow health check to pass immediately
+    setTimeout(() => {
+        try {
+            // Initialize trade history
+            initializeTradeHistory();
 
-    // Start simulation
-    clientSimulator.start();
+            // Start simulation
+            clientSimulator.start();
 
-    console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
-    console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);
-    console.log(`[Engine] Ready for ML-based fraud detection\n`);
+            console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
+            console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);
+            console.log(`[Engine] Ready for ML-based fraud detection\n`);
+        } catch (error) {
+            console.error('[Engine] Startup Error:', error);
+        }
+    }, 1000); // 1 second delay
 });

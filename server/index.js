@@ -15,15 +15,22 @@ import { tradeAdvisor } from './services/tradeAdvisor.js';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Health check - PRIORITIZED
-app.get('/api/health', (req, res) => res.json({ status: 'ok', time: Date.now() }));
-app.get('/', (req, res) => res.send('AI Payment Process API is Remote & Running 🚀'));
-
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// Health check for Railway
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 // Persistent trade storage + in-memory caches
 let trades = []; // Reference to tradeHistory.trades
@@ -946,46 +953,28 @@ clientSimulator.on('payout_request', async (request) => {
     console.log(`[AutoPayout] ${request.trader_id} -> ${status} | Risk: ${(riskAssessment.score * 100).toFixed(0)}% | Pattern: ${riskAssessment.embedding_matches?.[0]?.pattern_name || 'None'}`);
 });
 
-// Serve static files in production
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../dist')));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../dist/index.html'));
-    });
-}
+// SPA catch-all route (must be last)
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 // Start server
-const server = app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`\n╔════════════════════════════════════════════════════════╗`);
     console.log(`║     ENTERPRISE FRAUD DETECTION ENGINE v2.0             ║`);
     console.log(`║     ML-Powered with Embeddings & Pattern Matching      ║`);
     console.log(`╠════════════════════════════════════════════════════════╣`);
-    console.log(`║  Port: ${PORT} (Bound to 0.0.0.0)                         ║`);
+    console.log(`║  Port: ${PORT}                                            ║`);
     console.log(`║  GenAI: ${process.env.GEMINI_API_KEY ? 'ENABLED ✓' : 'DISABLED (fallback mode)'}                       ║`);
     console.log(`╚════════════════════════════════════════════════════════╝\n`);
 
-    // Initialize asynchronously to allow health check to pass immediately
-    setTimeout(() => {
-        try {
-            // Initialize trade history
-            initializeTradeHistory();
+    // Initialize trade history
+    initializeTradeHistory();
 
-            // Start simulation (DEV ONLY)
-            if (process.env.NODE_ENV !== 'production') {
-                clientSimulator.start();
-            } else {
-                console.log('[Engine] Simulation skipped in Production');
-            }
+    // Start simulation
+    clientSimulator.start();
 
-            console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
-            console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);
-            console.log(`[Engine] Ready for ML-based fraud detection\n`);
-        } catch (error) {
-            console.error('[Engine] Startup Error:', error);
-        }
-    }, 1000); // 1 second delay
+    console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
+    console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);
+    console.log(`[Engine] Ready for ML-based fraud detection\n`);
 });

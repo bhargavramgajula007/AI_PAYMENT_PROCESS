@@ -12,7 +12,7 @@ export default defineConfig({
     },
     server: {
         host: '0.0.0.0',        // listen on all network interfaces
-        allowedHosts: 'all',
+        allowedHosts: true,
         proxy: {
             '/api': 'http://localhost:3000'
         }

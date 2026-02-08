@@ -5,8 +5,9 @@
 ![System Status](https://img.shields.io/badge/Status-Operational-green) ![AI](https://img.shields.io/badge/AI-Integrated-blue) ![Security](https://img.shields.io/badge/Security-Enterprise-red)
 
 ## 📺 Project Demo
-<!-- REPLACE THIS LINK WITH YOUR YOUTUBE VIDEO -->
-[![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Watch the Demo](https://img.shields.io/badge/▶_Watch-Project_Demo_Video-red?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1aPOIUU8oTNiG_BVevMQfMyzOgKWaavSw/view?usp=sharing)
+
+> **Note**: Click the button above to view the full system demonstration.
 
 ---
 

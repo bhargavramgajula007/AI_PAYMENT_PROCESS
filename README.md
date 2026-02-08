@@ -4,14 +4,23 @@
 
 ![System Status](https://img.shields.io/badge/Status-Operational-green) ![AI](https://img.shields.io/badge/AI-Integrated-blue) ![Security](https://img.shields.io/badge/Security-Enterprise-red)
 
-## 🔴 Live Demo (Public Access)
-**URL**: [https://tame-llamas-smash.loca.lt](https://tame-llamas-smash.loca.lt)
-**Tunnel Password**: `20.83.144.88`
-*(Enter this IP if prompted by the tunnel service to access the demo)*
-
 ## 📺 Project Demo
 <!-- REPLACE THIS LINK WITH YOUR YOUTUBE VIDEO -->
 [![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+---
+
+## 🌐 Live Demo & Testing
+
+> **⚠️ IMPORTANT: Backend Instability Notice**
+> The live demo below is currently hosting on a limited environment.
+> - **Status**: Intermittent / Crashing
+> - **Reason**: We could not secure AWS credits for high-performance hosting despite being on-site. The backend simulated environment is resource-intensive and may timeout.
+> - **Recommendation**: **Testing locally is strongly recommended** for the full experience.
+
+### 🔗 Access Live Demo
+- **URL**: [https://tame-llamas-smash.loca.lt](https://tame-llamas-smash.loca.lt)
+- **Password**: `20.83.144.88`
 
 ---
 

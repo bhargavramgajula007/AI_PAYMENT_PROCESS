@@ -840,8 +840,6 @@ How can I help you with fraud investigation?`,
 
 // ===== SSE STREAM =====
 const sseClients = new Set();
-let stopSimulationTimeout = null;
-
 app.get('/api/stream', (req, res) => {
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
@@ -851,31 +849,7 @@ app.get('/api/stream', (req, res) => {
     const sendEvent = (data) => res.write(`data: ${JSON.stringify(data)}\n\n`);
     sseClients.add(sendEvent);
 
-    // Start simulation if this is the first client
-    if (sseClients.size === 1) {
-        if (stopSimulationTimeout) {
-            clearTimeout(stopSimulationTimeout);
-            stopSimulationTimeout = null;
-        }
-        if (!clientSimulator.isRunning) {
-            console.log('[Server] Client connected - Starting simulation');
-            clientSimulator.start();
-        }
-    }
-
-    req.on('close', () => {
-        sseClients.delete(sendEvent);
-
-        // Stop simulation if no clients left (with delay)
-        if (sseClients.size === 0) {
-            stopSimulationTimeout = setTimeout(() => {
-                if (sseClients.size === 0 && clientSimulator.isRunning) {
-                    console.log('[Server] No active clients - Stopping simulation to save resources');
-                    clientSimulator.stop();
-                }
-            }, 5000); // 5 second grace period for refreshes
-        }
-    });
+    req.on('close', () => sseClients.delete(sendEvent));
 });
 
 function broadcastToClients(msg) {
@@ -996,6 +970,9 @@ app.listen(PORT, () => {
 
     // Initialize trade history
     initializeTradeHistory();
+
+    // Start simulation
+    clientSimulator.start();
 
     console.log(`\n[Engine] Fraud patterns loaded: ${fraudPatterns.patterns.length}`);
     console.log(`[Engine] Embedding patterns: ${Object.keys(fraudEmbeddings.patterns).length}`);
